@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07070f;
+  --bg-card: #0d0d1a;
+  --bg-card-hover: #12122a;
+  --border: #1e1e3a;
+  --border-bright: #2d2d5a;
+  --cyan: #00d4ff;
+  --cyan-dim: #00d4ff40;
+  --purple: #7c3aed;
+  --purple-dim: #7c3aed30;
+  --green: #00ff88;
+  --text: #e2e8f0;
+  --text-muted: #6b7280;
+  --text-dim: #94a3b8;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px var(--cyan-dim), 0 0 40px var(--cyan-dim);
+}
+.glow-purple {
+  box-shadow: 0 0 20px var(--purple-dim), 0 0 40px var(--purple-dim);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 20px var(--cyan), 0 0 40px var(--cyan-dim);
+}
+.text-glow-green {
+  text-shadow: 0 0 20px var(--green), 0 0 40px rgba(0, 255, 136, 0.3);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.card-border {
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-border:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px var(--cyan-dim);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
