@@ -20,7 +20,7 @@ export interface Project {
 }
 
 function ss(url: string) {
-  return `https://image.thum.io/get/width/1200/crop/800/${url}`;
+  return `https://image.thum.io/get/width/1200/crop/800/wait/6000/noanimate/${url}`;
 }
 
 export const projects: Project[] = [
@@ -63,15 +63,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     link: "https://www.larpstudios.com",
     screenshot: ss("https://www.larpstudios.com"),
-  },
-  {
-    title: "Discord Bot Dashboard",
-    description:
-      "Web dashboard for managing Discord bots — command config, server stats, and real-time controls from a browser UI.",
-    category: "Discord Bots",
-    tech: ["React", "Node.js", "Discord API"],
-    link: "https://discordbotdashboard-sable.vercel.app",
-    screenshot: ss("https://discordbotdashboard-sable.vercel.app"),
   },
   // ── Client sites ─────────────────────────────────────────────────────
   {
